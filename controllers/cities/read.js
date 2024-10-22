@@ -1,19 +1,23 @@
-
 import City from "../../models/City.js";
 
-//traer todas las ciudades 
-let BringAllCities = async (req,res) =>{
+// Traer todas las ciudades 
+let BringAllCities = async (req, res, next) => {
     try {
-        let city = await City.find();
-        
-        return res.status(200).json({
-            response:city
-        })
-    } catch (error) {
-        return res.status(500).json({
-            response: error,
-        });
-    }
-}
+        let { name } = req.query;
+        let query = {};
 
-export {BringAllCities}
+        if (name) {
+            query.name = { $regex: "^" + name, $options: "i" }; 
+        }
+
+        let cities = await City.find(query); 
+
+        return res.status(200).json({
+            response: cities
+        });
+    } catch (error) {
+        return next(error); 
+    }
+};
+
+export { BringAllCities };
