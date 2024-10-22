@@ -8,7 +8,8 @@ const router = Router()
 // http://localhost:8080/api/cities
 router.get("/",BringAllCities)
 
-//crear por id 
+//Endpoint para obtener las ciudades por us ID
+// http://localhost:8080/api/cities/id/6717e832a0345dda4ac10c16
 router.get("/id/:id",idCities)
 
 //Endpoint para crear un objeto de ciudad
