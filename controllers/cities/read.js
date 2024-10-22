@@ -20,5 +20,29 @@ let BringAllCities = async (req, res, next) => {
     }
 };
 
+// Buscar ciudad por ID
+let idCities = async (req, res, next) => {
+    try {
 
-export { BringAllCities };
+        const { id } = req.params;
+
+
+        let city = await City.findById(id);
+
+        if (!city) {
+            return res.status(404).json({
+                error: "City not found"
+            });
+        }
+
+        // Si todo va bien, respondemos con la ciudad encontrada
+        return res.status(200).json({
+            response: city
+        });
+    } catch (error) {
+       
+        next(error);  
+    }
+};
+
+export { BringAllCities,idCities };
