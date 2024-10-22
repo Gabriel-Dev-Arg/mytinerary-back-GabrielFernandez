@@ -35,7 +35,7 @@ server.use("/api", indexRouter)
 server.use(not_found_handler)
 
 server.use(bad_request_handler)
-
 server.use(error_handler)
+
 
 server.listen(PORT, ready)

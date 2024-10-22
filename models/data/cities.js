@@ -19,7 +19,7 @@ const cities = [
     },
     {
         name: "Paris",
-        photo: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        photo: "https://th.bing.com/th/id/R.65e4d9198aacb416e895db6d4b3f50bd?rik=2GfXuabUSEQRew&pid=ImgRaw&r=0",
         country: "France",
         continent: "Europe",
         description: "The capital of France, known for the Eiffel Tower and art.",

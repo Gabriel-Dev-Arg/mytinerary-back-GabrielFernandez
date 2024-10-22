@@ -1,4 +1,5 @@
-const error_handler = (req, res, next) => {
+const error_handler = (error,req, res, next) => {
+    console.log(error);
     return res.status(500).json({
         success: false,
         // Error 500 - Error interno del servidor

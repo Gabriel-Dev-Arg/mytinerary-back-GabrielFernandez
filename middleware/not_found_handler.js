@@ -1,6 +1,5 @@
 const not_found_handler = (error,req, res, next) => {
-    console.log(error);
-    if (error.nombre == "bad Request"){
+    if (error.status == "bad Request"){
         return res.status(404).json({
             success: false,
             // Manejo de error 404
