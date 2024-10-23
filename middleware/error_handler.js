@@ -1,5 +1,5 @@
-const error_handler = (error,req, res, next) => {
-    console.log(error);
+const error_handler = (err, req, res, next) => {
+    console.error(err.stack); // Muestra el error completo para debug
     return res.status(500).json({
         success: false,
         // Error 500 - Error interno del servidor

@@ -9,10 +9,9 @@ let BringAllCities = async (req, res, next) => {
         if (name) {
             query.name = { $regex: "^" + name, $options: "i" };
         }
-
         let cities = await City.find(query);
-        // Si todo va bien, respondemos con las ciudades
         return res.status(200).json({
+            success: true,
             response: cities
         });
     } catch (error) {
@@ -23,26 +22,16 @@ let BringAllCities = async (req, res, next) => {
 // Buscar ciudad por ID
 let idCities = async (req, res, next) => {
     try {
-
         const { id } = req.params;
-
-
         let city = await City.findById(id);
-
-        if (!city) {
-            return res.status(404).json({
-                error: "City not found"
-            });
-        }
-
-        // Si todo va bien, respondemos con la ciudad encontrada
+        
         return res.status(200).json({
+            success: true,
             response: city
         });
     } catch (error) {
-       
         next(error);  
     }
 };
 
-export { BringAllCities,idCities };
+export { BringAllCities, idCities };
