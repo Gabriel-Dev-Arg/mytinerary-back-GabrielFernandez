@@ -4,6 +4,7 @@ import "./config/database.js"
 import cors from "cors"
 import morgan from "morgan";
 import indexRouter from "./router/index.js"
+import interinaryRouter from "./router/interinary.js"
 import bad_request_handler from "./middleware/bad_request_handler.js";
 import error_handler from "./middleware/error_handler.js";
 import not_found_handler from "./middleware/not_found_handler.js";
@@ -29,7 +30,8 @@ server.use((req, res, next) => {
 });
 
 // Rutas
-server.use("/api", indexRouter)
+server.use("/api", indexRouter, interinaryRouter)
+
 
 
 server.use(not_found_handler)
