@@ -16,7 +16,7 @@ router.get("/",getAllItineraries)
 router.get("/city/:city",getItinerariesByCity)
 
 //Endpoint para obtener un itinerario por su ID
-//http://localhost:8080/api/itineraries/6728e5c40f714c4d1772efc4
+//http://localhost:8080/api/itineraries/67295146008bd453ecc45da4
 router.get("/:id",getItineraryById)
 
 //Endpoint para crear un nuevo itinerario

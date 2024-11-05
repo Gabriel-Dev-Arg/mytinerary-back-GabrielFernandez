@@ -8,8 +8,8 @@ const update = async (req, res, next) => {
             id,
             updatedData,
             { 
-                new: true,  // Devuelve el documento actualizado
-                runValidators: true  // Ejecuta las validaciones del esquema
+                new: true,  
+                runValidators: true  
             }
         );
 

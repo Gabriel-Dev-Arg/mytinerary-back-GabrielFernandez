@@ -32,8 +32,6 @@ server.use((req, res, next) => {
 // Rutas
 server.use("/api", indexRouter, interinaryRouter)
 
-
-
 server.use(not_found_handler)
 server.use(bad_request_handler)
 server.use(error_handler)

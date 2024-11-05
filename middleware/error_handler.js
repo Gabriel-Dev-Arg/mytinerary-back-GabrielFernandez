@@ -1,9 +1,17 @@
 const error_handler = (err, req, res, next) => {
-    console.error(err.stack); // Muestra el error completo para debug
+    console.error('Error:', err);
+
+    if ((err.name === 'CastError' || err.name === 'ValidationError') && 
+        err.value && err.value.length <= 24) { 
+        return res.status(400).json({
+            success: false,
+            message: `Bad Request: ID inválido o datos incorrectos`
+        });
+    }
+
     return res.status(500).json({
         success: false,
-        // Error 500 - Error interno del servidor
-        message: `Ocurrió un error en la ruta ${req.originalUrl} utilizando el método ${req.method}. Estamos trabajando para solucionarlo.`
+        message: `Error interno del servidor en la ruta ${req.originalUrl}`
     });
 };
 

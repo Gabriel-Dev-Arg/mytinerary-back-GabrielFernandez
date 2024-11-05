@@ -1,9 +1,7 @@
 const not_found_handler = (req, res, next) => {
-    return res.status(404).json({
-        success: false,
-        // Manejo de error 404
-        message: `La petición con el método ${req.method} en la ruta ${req.url} no fue encontrada - Not Found`
-    });
+    const error = new Error(`Ruta no encontrada: ${req.method} ${req.originalUrl}`);
+    error.status = 404;
+    next(error);
 };
 
 export default not_found_handler;
