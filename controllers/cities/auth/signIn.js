@@ -10,7 +10,7 @@ export default async(req,res,next) => {
                 select: 'email firstName lastName photo country online'
             }
         );
-        
+        console.log(`User ${updatedUser.email} signed in successfully`);
         return res.status(200).json({
             success: true,
             message: "signed In",
