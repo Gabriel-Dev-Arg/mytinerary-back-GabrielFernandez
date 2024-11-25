@@ -11,7 +11,6 @@ import not_found_handler from "./middleware/not_found_handler.js";
 
 const server = express()
 const PORT = process.env.PORT || 8080
-
 const ready = () => console.log("server ready in port :" + PORT)
 
 server.use(express.json())

@@ -1,6 +1,8 @@
 import { Router } from "express";
 import citiesRouter from "./cities.js"
 import interinaryRouter from "./interinary.js"
+import usersRouter from "./users.js"
+import routerAuth from "./auth.js"
 
 const router = Router()
 
@@ -9,5 +11,9 @@ const router = Router()
 router.use("/cities",citiesRouter)
 
 router.use("/itineraries",interinaryRouter)
+
+router.use("/users",usersRouter)
+
+router.use("/auth", routerAuth)
 
 export default router

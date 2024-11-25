@@ -4,7 +4,9 @@ const itinerarySchema = new Schema({
   author: {
     name: { type: String, required: true },
     photo: { type: String, required: true },
+    title: { type: String},
   },
+  image: { type: String},
   price: {
     type: Number,
     required: true,
